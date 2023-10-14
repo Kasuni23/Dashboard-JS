@@ -25,10 +25,107 @@
                     <li><a href="#">logout</a></li>
                     </ul>
                 </div>
-                Main content area
+
+               <div class="form">
+                <form onsubmit="addToCart(event)">
+                    <label >Vehicle Name</label>
+                    <input type="text" id="vehicleName" required>
+
+                    <button type="submit">Add to List</button>
+                </form>
+               </div>
+               <ul id="carsList">
+
+               </ul>
+
+               <form onsubmit="submitform(event)">
+                    <input type="text" id="userName" placeholder="User Name" required/>
+                    <input type="password" id="password" placeholder="Password" required />
+                    <input type="email" id="email" placeholder="Email" required />
+                    <input type="text" id="phone" placeholder="Telephone" required />
+                    <button type="submit">Submit</button>
+
+                    <p id="erroMsg"></p>
+                </form>
             </div>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/00aa9bb601.js" crossorigin="anonymous"></script>
+   
+   <script>
+
+     const submitform = (event) => {
+
+        event.preventDefault();
+
+        let username = document.getElementById("userName").value;
+        let password = document.getElementById("password").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+
+        // validate
+
+        let erroMsg = document.getElementById("erroMsg");
+        let email_regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+        let phone_regex = /^(\([0-9]{3}\)\s*|[0-9]{3}\-)[0-9]{3}-[0-9]{4}$/;
+
+        if(username.length < 8 ){
+            erroMsg.innerHTML = "user name must at least 8 characters";
+        }
+        else if(password.length <8){
+            erroMsg.innerHTML = "password must at least 8 characters";
+        }
+        else if(!email_regex.test(email)){
+            erroMsg.innerHTML = "is enter valid email";
+        }
+        else if(!phone_regex.test(phone)){
+            erroMsg.innerHTML = "enter correct number";
+        }
+        else{
+            erroMsg.innerHTML = "";
+
+            // submit the form to server side 
+        }
+
+        }
+
+
+
+
+        let cars= []; // define array
+        const addToCart = (event) =>{
+            event.preventDefault();
+
+            let carsList = document.getElementById("carsList"); // find the element with id 'carsList'
+            let vehicleName = document.getElementById("vehicleName").value; //get the value entered by user
+
+            cars.push(vehicleName);
+           carsList.innerHTML = "";
+
+            // for (let i = 0; i < cars.length;i++) {
+            //     carsList.innerHTML += `<li>${cars[i]}</li>`; 
+            // }
+
+            // let i=0;
+            // while(i<cars.length) {
+            //     carsList.innerHTML += `<li>${cars[i]}</li>`;
+            //     i++;
+            // }
+
+            // cars.forEach((cars) =>{
+            //     carsList.innerHTML += `<li>${cars}</li>`;
+            // })
+
+             cars.map((cars) => {
+                carsList.innerHTML += `<li>${cars}</li>`;
+            })
+
+            document.getElementById("vehicleName").value = ""; //clear 
+            
+        }
+
+       
+       
+    </script>
 </body>
 </html>

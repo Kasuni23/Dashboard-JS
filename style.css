@@ -26,7 +26,7 @@ body{
 }
 
 .main-content{
-    background-color: gainsboro;
+    background-color: rgb(239, 236, 236);
     width: 80%;
     height: 100%;
     
@@ -53,6 +53,7 @@ body{
 .top-menu{
     background-color: white;
     padding: 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .top-menu-list{
@@ -69,3 +70,11 @@ body{
     display: inline-block;
     padding: 5px 15px ;
 }
+
+.top-menu-list>li>a:hover {
+    /*when mouse goes over a link */
+    background-color: #f9f9f9;
+    color: blue;
+    font-weight: 500;
+}
+

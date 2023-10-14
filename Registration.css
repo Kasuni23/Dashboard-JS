@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caprasimo&family=Inconsolata&family=Open+Sans:wght@400;500;600&family=Roboto:ital@0;1&display=swap');
+
+
+html {
+    height: 100%;
+    /* to get page full body*/
+}
+
+body {
+    background-color: rgb(219, 217, 217);
+    margin: 0;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.register-header{
+    text-align: center;
+}
+
+.register-box{
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     background-color: white;
+     padding: 25px;
+     border-radius: 25px;
+}
+
+.sub{
+    margin-bottom: 15px;
+}
+
+input{
+    width: 100%;
+    height: 25px;
+    border: none;
+    border-bottom:1px solid gray ;
+}
+
+input:focus-visible{
+    outline: none;
+    border-color: aqua;
+}
+
+.button-area{
+    text-align: right;
+}
+
+.register-btn{
+    border: none;
+    background-color: rgb(127, 185, 255);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 5px;
+}

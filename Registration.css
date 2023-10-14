@@ -55,3 +55,13 @@ input:focus-visible{
     padding: 10px 30px;
     border-radius: 5px;
 }
+
+.register-btn:hover{
+    cursor: pointer;
+    background-color: rgb(78, 78, 253);
+}
+
+.error-msg{
+    font-size: 14px;
+    color: red;
+}

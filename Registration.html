@@ -11,14 +11,17 @@
         </div>
 
         <div class="register-box">
-        <form>
+        <form onsubmit="submitform(event)">
+
         <div class="sub">
           <label>User Name</label>
           <input type="text" id="userName" placeholder="User Name" required />
+           
         </div>
         <div class="sub">
           <label>Email</label>
           <input type="email" id="email" placeholder="Email" required />
+      
         </div>
         <div class="sub">
           <label>Password</label>
@@ -28,6 +31,7 @@
             placeholder="Password"
             required
           />
+        
         </div>
         <div class="sub">
           <label>Confirm Password</label>
@@ -38,10 +42,51 @@
             required
           />
         </div>
+        <div id="erroMsg"  class="error-msg">
+
+        </div>
         <div class="button-area">
           <button type="submit" class="register-btn">Register</button>
         </div>
       </form>
     </div>
+
+    <script>
+        const submitform = (event) => {
+            event.preventDefault();
+
+            let username = document.getElementById("userName").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmpassword = document.getElementById("confirmpassword").value;
+            
+
+            let erroMsg ;
+            const email_regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+            const password_regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+
+            if(username.length < 8){
+                erroMsg  = "Username must be at least 8 characters";
+            }
+            else if (!email_regex.test(email)){
+                erroMsg = "Enter correct email";
+            }
+            else if (!password_regex.test(password)){
+                erroMsg = "Enter Correct password";
+            }
+            else if(password != confirmpassword){
+                erroMsg = "Enter Correct Password";
+            }
+            else{
+                erroMsg = "";
+               
+            }
+
+            document.getElementById('erroMsg').innerHTML = erroMsg;
+             return true;
+        }
+    </script>
+
+
   </body>
 </html>

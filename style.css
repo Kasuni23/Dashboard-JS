@@ -43,7 +43,7 @@ body{
     padding: 10px 25px;
 }
 
-.side-bar-menu>li>a:hover{
+.side-bar-menu>li>a:hover{ /*when mouse goes over a link */
     background-color: #f9f9f9;
      color: blue;
      font-weight: 500;

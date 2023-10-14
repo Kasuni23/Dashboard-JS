@@ -35,3 +35,16 @@ body{
     list-style-type: none;
     padding-left: 0;
 }
+
+.side-bar-menu>li>a{
+    display: block;
+    text-decoration: none;
+    color: #4c4c4c;
+    padding: 10px 25px;
+}
+
+.side-bar-menu>li>a:hover{
+    background-color: #f9f9f9;
+     color: blue;
+     font-weight: 500;
+}

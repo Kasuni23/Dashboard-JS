@@ -29,6 +29,7 @@ body{
     background-color: gainsboro;
     width: 80%;
     height: 100%;
+    
 }
 
 .side-bar-menu{
@@ -47,4 +48,24 @@ body{
     background-color: #f9f9f9;
      color: blue;
      font-weight: 500;
+}
+
+.top-menu{
+    background-color: white;
+    padding: 5px 15px;
+}
+
+.top-menu-list{
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.top-menu-list>li>a{
+    text-decoration: none;
+    color: #4c4c4c;
+    display: inline-block;
+    padding: 5px 15px ;
 }
